@@ -1,0 +1,1435 @@
+  /* ==========================================================================
+     Page-Specific Styles
+     ========================================================================== */
+
+  /* Reset box sizing */
+  * {
+    box-sizing: border-box
+  }
+
+  /* Brand text selection */
+  ::selection {
+    background: var(--electric);
+    color: #fff;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  /* Page container: Midnight Navy background and font smoothing */
+  body {
+    margin: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: var(--navy);
+    color: #fff;
+    font: 400 1.0625rem/1.55 var(--font);
+    -webkit-font-smoothing: antialiased
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0
+  }
+
+  a {
+    color: inherit
+  }
+
+  /* Centered wrapper container */
+  .wrap {
+    width: min(1200px, 100% - 48px);
+    margin-inline: auto
+  }
+
+  /* General sections: responsive vertical fluid padding */
+  .sec {
+    padding: clamp(72px, 11vw, 140px) 0;
+    position: relative
+  }
+
+  /* Light theme section variant */
+  .sec.light {
+    background: var(--paper);
+    color: var(--ink)
+  }
+
+  /* Brand gradient section variant */
+  .sec.bg {
+    background: var(--field);
+    isolation: isolate
+  }
+
+  /* Eyebrow sub-heading */
+  .eyebrow {
+    color: var(--sky);
+    display: flex;
+    align-items: center;
+    gap: .9em;
+    margin: 28px
+  }
+
+  .light .eyebrow {
+    color: var(--electric)
+  }
+
+  .eyebrow .ax-slash {
+    font-size: 1.15em;
+    color: inherit
+  }
+
+  /* Section heading H2 */
+  h2 {
+    font-weight: 600;
+    font-size: clamp(2rem, 4.4vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    max-width: 16ch
+  }
+
+  /* Lead paragraph text */
+  .lead {
+    max-width: 56ch;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, .72);
+    font-weight: 300;
+    font-size: 1.15rem
+  }
+
+  .light .lead {
+    color: rgba(0, 7, 44, .7)
+  }
+
+  /* --------------------------------------------------------------------------
+     1. Hero Section (Single Screen - Zero Scroll)
+     -------------------------------------------------------------------------- */
+  .hero {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero header:empty {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Header navigation bar */
+  .hero header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(20px, 3vw, 36px) clamp(24px, 4vw, 56px)
+  }
+
+  .hero header img {
+    height: clamp(34px, 3.4vw, 46px);
+    width: auto;
+    display: block
+  }
+
+  /* Menu button */
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .8em;
+    min-height: 44px;
+    padding: 0 4px;
+    background: none;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent
+  }
+
+  .menu-btn:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 4px
+  }
+
+  .menu-btn:active .ax-slash::before {
+    transform: skewX(0)
+  }
+
+  /* Slash straightens to pipe on active press */
+  .menu-btn .ax-slash {
+    font-size: 1.3em;
+    transition: none
+  }
+
+  .menu-btn .ax-slash::before {
+    transition-duration: var(--t-press)
+  }
+
+  /* Hero body: two-column layout */
+  .hero-body {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 32px;
+    padding: 0 clamp(24px, 4vw, 56px) 12px;
+  }
+
+  .hero h1 {
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5.6vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -.03em;
+  }
+
+  .hero h1 .ax-line {
+    padding-right: .1em;
+    white-space: nowrap;
+  }
+
+  .hero .role {
+    color: var(--ice);
+    margin-bottom: clamp(10px, 1.6vw, 18px);
+  }
+
+  .hero p.sub {
+    max-width: 34ch;
+    margin-top: clamp(10px, 1.4vw, 16px);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    color: rgba(255, 255, 255, .82);
+    line-height: 1.45;
+  }
+
+  .hero .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: clamp(16px, 2vw, 24px);
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .hero .cta .ax-btn {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    font: 600 1rem/1 var(--font);
+  }
+
+  .hero .cta .ax-btn .btn-left {
+    display: inline-flex;
+    align-items: center;
+    gap: .85em;
+  }
+
+  .hero .cta .ax-btn .btn-state {
+    font-size: .85rem;
+    color: var(--ice);
+    opacity: .7;
+    transition: opacity var(--t-state), color var(--t-state);
+  }
+
+  /* Hero mark motion sequence */
+  .hero-mark {
+    --mw: min(46vw, 640px);
+    position: relative;
+    width: var(--mw);
+    aspect-ratio: 353.58/172.09;
+    justify-self: end;
+  }
+
+  .hero-mark svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .hero-mark .l-trace {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.4;
+  }
+
+  .hero-mark .l-slash {
+    --d: 18vw;
+  }
+
+  .hero-mark .l-a {
+    --h: calc(var(--mw) * .4867);
+  }
+
+  /* Hero footer: lockup and replay controls */
+  .hero-foot {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px clamp(24px, 4vw, 56px);
+    border-top: 1px solid rgba(157, 213, 250, .28);
+    margin: 0 clamp(24px, 4vw, 56px);
+    padding-inline: 0;
+    color: rgba(255, 255, 255, .7);
+  }
+
+  .hero-foot-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-foot-div img {
+    height: clamp(20px, 2.8vh, 28px);
+    width: auto;
+    display: block;
+  }
+
+  .hero-foot button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    white-space: nowrap;
+  }
+
+  .hero-foot button:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 4px
+  }
+
+  .wrap {
+    width: min(1200px, 100% - 48px);
+    margin-inline: auto
+  }
+
+  /* ==========================================================================
+     Living Brand Pattern - Ambient Background Geometry
+     ========================================================================== */
+  .living-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+    contain: paint;
+  }
+
+  /* 60-degree axis mesh background grid */
+  .living-pattern .pattern-mesh {
+    position: absolute;
+    inset: -20%;
+    background-image:
+      repeating-linear-gradient(60deg,
+        rgba(52, 157, 255, 0.035) 0px,
+        rgba(52, 157, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 84px),
+      repeating-linear-gradient(-60deg,
+        rgba(157, 213, 250, 0.018) 0px,
+        rgba(157, 213, 250, 0.018) 1px,
+        transparent 1px,
+        transparent 84px);
+    mask-image: radial-gradient(ellipse 70% 70% at 65% 35%, #000 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 65% 35%, #000 20%, transparent 85%);
+  }
+
+  /* Soft ambient specular glow */
+  .living-pattern .pattern-aura {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(55% 65% at 80% 20%, rgba(17, 106, 248, 0.35) 0%, rgba(52, 157, 255, 0.14) 36%, transparent 75%),
+      radial-gradient(60% 60% at 15% 85%, rgba(0, 27, 127, 0.45) 0%, rgba(5, 50, 171, 0.15) 45%, transparent 80%),
+      radial-gradient(40% 40% at 50% 50%, rgba(157, 213, 250, 0.06) 0%, transparent 70%);
+    filter: blur(48px);
+    animation: ax-aura-pulse 10s ease-in-out infinite alternate;
+  }
+
+  /* 60-degree axis guideline beams */
+  .living-pattern .pattern-lines {
+    position: absolute;
+    inset: 0;
+  }
+
+  .living-pattern .pline {
+    position: absolute;
+    width: 1px;
+    height: 180%;
+    top: -40%;
+    background: linear-gradient(180deg, transparent 0%, rgba(157, 213, 250, 0.2) 50%, transparent 100%);
+    transform: skewX(-30deg);
+    opacity: 0.35;
+  }
+
+  .living-pattern .pline.l1 {
+    left: 16%;
+  }
+
+  .living-pattern .pline.l2 {
+    left: 45%;
+    opacity: 0.22;
+  }
+
+  .living-pattern .pline.l3 {
+    left: 72%;
+    opacity: 0.3;
+  }
+
+  .living-pattern .pline.l4 {
+    left: 90%;
+    opacity: 0.2;
+  }
+
+  /* Fixed ghost outlines coordinates */
+  .ghost-a {
+    left: 54%;
+    top: -80px;
+    width: 220px;
+  }
+
+  .ghost-b {
+    left: 62%;
+    bottom: -60px;
+    width: 280px;
+  }
+
+  .ghost-c {
+    left: 10%;
+    bottom: 12%;
+    width: 150px;
+  }
+
+  @keyframes ax-aura-pulse {
+    0% {
+      opacity: 0.68;
+      transform: scale(0.98);
+    }
+
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
+    }
+
+    100% {
+      opacity: 0.68;
+      transform: scale(0.98);
+    }
+  }
+
+  /* Mobile viewport layout (Single Screen - Zero Scroll) */
+  @media (max-width:820px) {
+    .hero-body {
+      grid-template-columns: 1fr;
+      gap: clamp(14px, 2.4vh, 24px);
+      align-content: center;
+      padding: clamp(8px, 1.5vh, 18px) clamp(20px, 5vw, 36px);
+    }
+
+    .hero-mark {
+      --mw: min(58vw, 220px);
+      justify-self: start;
+      order: -1;
+      margin-bottom: clamp(6px, 1.2vh, 12px);
+    }
+
+    .hero-mark .l-slash {
+      --d: 18vw;
+    }
+
+    .hero h1 {
+      font-weight: 600;
+      font-size: clamp(1.95rem, 6.2vw, 2.75rem);
+      line-height: 1.03;
+      letter-spacing: -.03em;
+    }
+
+    .hero .role {
+      color: var(--ice);
+      margin-bottom: clamp(8px, 1.4vh, 14px);
+      font-size: clamp(0.7rem, 2.4vw, 0.78rem);
+    }
+
+    .hero p.sub {
+      max-width: 34ch;
+      margin-top: clamp(10px, 1.6vh, 16px);
+      font-weight: 300;
+      font-size: clamp(0.95rem, 3.2vw, 1.12rem);
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.45;
+    }
+
+    .hero .cta {
+      margin-top: clamp(14px, 2.2vh, 22px);
+      gap: clamp(9px, 1.3vh, 12px);
+      max-width: 100%;
+    }
+
+    .hero .cta .ax-btn {
+      min-height: 52px;
+      padding: 0 1.25rem;
+      font: 600 1rem/1 var(--font);
+    }
+
+    .hero-foot {
+      padding: clamp(12px, 1.6vh, 16px) clamp(20px, 5vw, 36px);
+      margin: 0 clamp(20px, 5vw, 36px);
+      padding-inline: 0;
+    }
+
+    .hero-foot-div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-foot-div img {
+      height: clamp(20px, 2.6vh, 24px);
+      max-width: 50%;
+    }
+
+    .hero-foot button {
+      font-size: 0.72rem;
+    }
+
+    .hero-foot .hide-sm {
+      display: none;
+    }
+
+    /* Mobile ambient pattern adjustments */
+    .living-pattern .pattern-mesh {
+      opacity: 0.85;
+      background-size: 60px 60px;
+      mask-image: radial-gradient(circle at 50% 35%, #000 25%, transparent 90%);
+      -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 25%, transparent 90%);
+    }
+
+    .living-pattern .pattern-aura {
+      filter: blur(36px);
+      background:
+        radial-gradient(85% 65% at 75% 20%, rgba(17, 106, 248, 0.45) 0%, rgba(52, 157, 255, 0.2) 40%, transparent 80%),
+        radial-gradient(75% 65% at 20% 75%, rgba(0, 27, 127, 0.55) 0%, rgba(5, 50, 171, 0.2) 50%, transparent 85%);
+    }
+
+    .ghost-a {
+      width: 145px;
+      left: auto;
+      right: -10px;
+      top: -15px;
+      opacity: 0.75;
+    }
+
+    .ghost-b {
+      width: 215px;
+      left: -30px;
+      bottom: 85px;
+      opacity: 0.55;
+    }
+
+    .ghost-c {
+      display: block;
+      width: 125px;
+      left: auto;
+      right: -10px;
+      bottom: 15px;
+      opacity: 0.4;
+    }
+  }
+
+
+
+
+  /* ==========================================================================
+   AXIS — Motion Identity System
+   --------------------------------------------------------------------------
+   Core principle: "Motion is punctuation".
+   Triggers once on load, scroll into view, or explicit user action, then rests.
+   No persistent hover loops or ambient noise.
+   All directional motion, cuts, and slants follow the 60° brand axis (bottom-left to top-right).
+   Base styles reflect the final state; reduced motion cleanly presents static layouts.
+   ========================================================================== */
+
+  /* 
+   Houdini custom property for animating numeric clip-path progress.
+   --c ranges from 0 (clipped/hidden) to 1 (fully revealed).
+  */
+  @property --c {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 1;
+  }
+
+  :root {
+    /* ==========================================================================
+     Brand Palette
+     ========================================================================== */
+    --navy: #00041c;
+    /* Primary dark background (Midnight Navy) */
+    --royal: #001b7f;
+    /* Deep royal blue */
+    --electric: #0045d5;
+    /* Vibrant electric blue for active elements */
+    --sky: #349dff;
+    /* Skyline blue for secondary text and accents */
+    --ice: #9dd5fa;
+    /* Ice blue for click flash blade and borders */
+    --ink: #00072c;
+    /* Dark ink for light backgrounds */
+    --mist: #e4ebf5;
+    /* Cool gray background tint */
+    --paper: #f5f5f5;
+    /* Off-white paper tone */
+    --slash-a: #0532ab;
+    /* Slash gradient start */
+    --slash-b: #116af8;
+    /* Slash gradient end */
+
+    /* 
+     Brand Field background:
+     Radial highlight combined with a linear gradient aligned to the brand angle.
+    */
+    --field:
+      radial-gradient(52% 62% at 100% 0%, rgba(228, 235, 245, .95) 0%, rgba(120, 175, 255, .55) 22%, rgba(17, 105, 248, 0) 62%),
+      linear-gradient(to top right, #010210 0%, #031b6b 26%, #052c98 48%, #0a48d8 74%, #1169fb 100%);
+
+    /* ==========================================================================
+     60° Axis Geometry
+     ========================================================================== */
+    /* tan(30°) = 0.57735: horizontal offset per unit height for a 60° slant */
+    --tan30: .57735;
+    /* Directional unit vectors along 60° axis (cos 60°, -sin 60°) */
+    --ride-x: .5;
+    --ride-y: -.866;
+
+    /* ==========================================================================
+     Motion Timing
+     ========================================================================== */
+    --t-press: 160ms;
+    /* Fast button press response */
+    --t-state: 360ms;
+    /* State changes (e.g. toggle switch) */
+    --t-move: 640ms;
+    /* Primary entrance duration */
+    --t-plane: 900ms;
+    /* Full-screen plane transition duration */
+    --step: 90ms;
+    /* Stagger increment between consecutive items */
+
+    /* ==========================================================================
+     Easing Curves
+     ========================================================================== */
+    --e-out: cubic-bezier(.2, .8, .2, 1);
+    /* Smooth deceleration curve */
+    --e-inout: cubic-bezier(.76, 0, .24, 1);
+    /* Balanced acceleration-deceleration curve */
+    --e-draw: cubic-bezier(.65, 0, .35, 1);
+    /* Optimized easing for SVG stroke drawing */
+
+    /* Typography — Commissioner brand typeface */
+    --font: "Commissioner", system-ui, -apple-system, sans-serif;
+    --mono: "Commissioner", system-ui, -apple-system, sans-serif;
+  }
+
+  /* ==========================================================================
+   1. THE FIVE MOVES
+   ========================================================================== */
+
+  /* 
+   Move 1: Draw — Stroke-based SVG perimeter animation.
+   Requires pathLength="1" on target SVG paths for normalized dash array.
+  */
+  .ax-draw path,
+  .ax-draw polygon,
+  path.ax-draw,
+  polygon.ax-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    /* Fill-mode backwards keeps element hidden during animation delay */
+    animation: ax-draw var(--dur, 1100ms) var(--e-draw) var(--delay, 0ms) backwards;
+  }
+
+  @keyframes ax-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+
+    /* Start fully offset (invisible stroke) */
+  }
+
+  /* 
+   Move 1b: Trace — Draw stroke boundary and fade out to reveal solid fill.
+  */
+  .ax-trace {
+    opacity: 0;
+    stroke-dasharray: 1;
+    animation: ax-trace var(--dur, 1500ms) var(--e-draw) var(--delay, 0ms) both;
+  }
+
+  @keyframes ax-trace {
+    0% {
+      stroke-dashoffset: 1;
+      opacity: 1;
+    }
+
+    /* Start drawing stroke */
+    70% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+
+    /* Stroke complete */
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+
+    /* Stroke fades out, revealing underlying fill */
+  }
+
+  /* 
+   Move 2: Ride — Slide element along the 60° axis with deceleration.
+   --d : Total travel distance (defaults to 120px).
+  */
+  .ax-ride {
+    animation: ax-ride var(--dur, var(--t-move)) var(--e-out) var(--delay, 0ms) backwards;
+  }
+
+  @keyframes ax-ride {
+    from {
+      opacity: 0;
+      /* Compute start coordinates from unit vectors */
+      transform: translate(calc(var(--d, 120px) * var(--ride-x) * -1),
+          calc(var(--d, 120px) * var(--ride-y) * -1));
+    }
+
+    35% {
+      opacity: 1;
+    }
+
+    /* Reach full opacity before coming to rest */
+  }
+
+  /* 
+   Move 3: Cut — 60° angled blade reveal clip mask from left to right.
+   --h : Element visual height (used to calculate slant offset for fixed 60°).
+   --i : Element index for staggered sequential reveal (90ms step).
+  */
+  .ax-cut {
+    --h: 1em;
+    /* Horizontal slant offset: height multiplied by tan(30°) */
+    --o: calc(var(--h) * var(--tan30));
+    clip-path: polygon(0 0,
+        calc(var(--c) * (100% + var(--o))) 0,
+        calc(var(--c) * (100% + var(--o)) - var(--o)) 100%,
+        0 100%);
+    animation: ax-cut var(--dur, var(--t-move)) var(--e-inout) calc(var(--delay, 0ms) + var(--i, 0) * var(--step)) backwards;
+  }
+
+  /* Remove clip-path once finished to avoid clipping focus rings and descenders */
+  .ax-cut.is-done {
+    clip-path: none;
+    animation: none;
+  }
+
+  @keyframes ax-cut {
+    from {
+      --c: 0;
+    }
+
+    to {
+      --c: 1;
+    }
+  }
+
+  /* Line wrap utility for headings to preserve descenders (g, y, p) during clip */
+  .ax-line {
+    --h: 1em;
+    display: block;
+    padding: .08em 0 .16em;
+    margin: -.16em 0 -.16em;
+  }
+
+  /* 
+   Move 4: Fold — Slash transitions between forward "/", vertical "|", and back "\" states.
+   Reserved for intentional state toggles and selection.
+  */
+  .ax-slash {
+    display: inline-block;
+    width: .36em;
+    height: 1em;
+    position: relative;
+    vertical-align: -.12em;
+  }
+
+  .ax-slash::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    transform: skewX(-30deg);
+    /* Forward slash resting angle (-30deg skew = 60° from horizontal) */
+    transition: transform var(--t-state) var(--e-inout);
+    /* Smooth transition through vertical */
+  }
+
+  .ax-slash.is-pipe::before {
+    transform: skewX(0);
+  }
+
+  /* Temporary vertical pipe "|" state */
+  .ax-slash.is-back::before {
+    transform: skewX(30deg);
+  }
+
+  /* Inverted backslash "\" state indicating completion/selected */
+
+  /* 
+   Move 5: Rest — Design philosophy of static resting state after animation.
+   No continuous loops; elements remain at rest once rendered.
+  */
+
+  /* 
+   Scroll Reveal: Single entrance when element enters viewport.
+   JavaScript adds .is-in class on IntersectionObserver trigger.
+  */
+  .ax-reveal:not(.is-in) {
+    opacity: 0;
+  }
+
+  .ax-reveal.is-in {
+    animation: ax-fade var(--t-move) var(--e-out) calc(var(--i, 0) * var(--step)) backwards;
+  }
+
+  @keyframes ax-fade {
+    from {
+      opacity: 0;
+      transform: translate(calc(-14px * var(--ride-x)*-1), 14px);
+    }
+  }
+
+  .ax-reveal.ax-cut:not(.is-in) {
+    animation: none;
+  }
+
+  .ax-reveal.ax-cut.is-in {
+    animation: ax-cut var(--dur, var(--t-move)) var(--e-inout) calc(var(--i, 0) * var(--step)) backwards;
+  }
+
+  /* Animation Gate: Freezes child animations until parent enters viewport */
+  .ax-gate:not(.is-in) *,
+  .ax-gate:not(.is-in) *::after {
+    animation-play-state: paused !important;
+  }
+
+  /* ==========================================================================
+   2. THE STAGE & BACKGROUNDS
+   ========================================================================== */
+  .ax-stage {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  /* Fullscreen background field with large 60° cut reveal */
+  .ax-stage>.ax-field {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: var(--field);
+    --h: 100vh;
+    --dur: var(--t-plane);
+    --delay: 0ms;
+    /* Slant offset calculated from viewport height */
+    --o: calc(100vh * var(--tan30));
+    clip-path: polygon(0 0,
+        calc(var(--c) * (100% + var(--o))) 0,
+        calc(var(--c) * (100% + var(--o)) - var(--o)) 100%,
+        0 100%);
+    animation: ax-cut var(--t-plane) var(--e-inout) backwards;
+  }
+
+  .ax-stage>.ax-field.is-done {
+    clip-path: none;
+    animation: none;
+  }
+
+  /* ==========================================================================
+   CIRCUIT TRACK & RUNNER
+   Static base track with an animated light tracer following the circuit path.
+   ========================================================================== */
+  .ax-ghost {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  /* Static base circuit track */
+  .ax-ghost .track {
+    fill: none;
+    stroke: rgba(75, 155, 255, 0.26);
+    stroke-width: var(--sw, 0.85);
+    stroke-dasharray: none;
+    opacity: 0.85;
+  }
+
+  /* Animated light tracer moving along the circuit path */
+  .ax-ghost .tracer {
+    fill: none;
+    stroke: var(--ice);
+    stroke-width: calc(var(--sw, 0.85) * 2);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 0.18 0.82;
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 6px var(--sky)) drop-shadow(0 0 2px #fff);
+    animation: ax-track-run var(--trace-dur, 6s) linear infinite;
+    animation-delay: var(--trace-delay, 0s);
+  }
+
+  /* Individual tracer speeds and delays */
+  .ghost-a .tracer {
+    --trace-dur: 16.6s;
+    stroke: #cce9ff81;
+  }
+
+  .ghost-b .tracer {
+    --trace-dur: 20.6s;
+    --trace-delay: -2.4s;
+    stroke: #cce9ff81;
+  }
+
+  .ghost-c .tracer {
+    --trace-dur: 12.6s;
+    --trace-delay: -4.2s;
+    stroke: var(--sky);
+  }
+
+  /* Keyframe animation for runner along path offset */
+  @keyframes ax-track-run {
+    0% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      stroke-dashoffset: -1;
+    }
+  }
+
+  /* Hairline Axis: 1px subtle guide along the 60° plane */
+  .ax-hair {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(157, 213, 250, .55) 30%, rgba(157, 213, 250, .55) 70%, transparent);
+    transform-origin: 50% 50%;
+  }
+
+  /* ==========================================================================
+   3. MONOSPACE TYPOGRAPHY
+   ========================================================================== */
+  .ax-mono {
+    font: 500 .72rem/1 var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  /* ==========================================================================
+   4. BUTTONS (Press interaction, not hover-heavy)
+   ========================================================================== */
+  .ax-btn {
+    --bg: #fff;
+    --fg: var(--ink);
+    --edge: transparent;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: .75em;
+    min-height: 52px;
+    padding: 0 1.5em 0 1.25em;
+    font: 600 1rem/1 var(--font);
+    letter-spacing: .01em;
+    color: var(--fg);
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    transition: transform var(--t-press) var(--e-out);
+  }
+
+  /* Button variants */
+  .ax-btn.is-ghost {
+    --bg: transparent;
+    --fg: #fff;
+    --edge: rgba(157, 213, 250, .55);
+    transition: background var(--t-press) var(--e-out), border-color var(--t-press) var(--e-out), transform var(--t-press) var(--e-out);
+  }
+
+  /* Ghost variant with subtle border */
+  .ax-btn.is-ghost:hover {
+    background: rgba(157, 213, 250, 0.08);
+    border-color: var(--sky);
+  }
+
+  .ax-btn.is-blue {
+    --bg: var(--electric);
+    --fg: #fff;
+  }
+
+  /* Electric blue solid button */
+  .ax-btn:active {
+    transform: translateY(1px);
+  }
+
+  /* 1px press feedback */
+
+  /* Fold effect: slash tilts from "/" to "\" on hover/focus */
+  .ax-btn .ax-slash::before {
+    transition: transform var(--t-state) var(--e-inout);
+  }
+
+  .ax-btn:hover .ax-slash::before,
+  .ax-btn:focus-visible .ax-slash::before,
+  .ax-btn.is-active .ax-slash::before,
+  .ax-btn .ax-slash.is-back::before {
+    transform: skewX(30deg);
+    /* Inverted backslash "\" resting position */
+  }
+
+  .ax-btn:hover .btn-state,
+  .ax-btn:focus-visible .btn-state,
+  .ax-btn.is-active .btn-state {
+    opacity: 1;
+    color: #fff;
+  }
+
+  /* Slash momentarily goes vertical "|" on active press */
+  .ax-btn:active .ax-slash::before {
+    transform: skewX(0);
+    transition-duration: var(--t-press);
+  }
+
+  .ax-btn:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 3px;
+  }
+
+  /* Ice blade flash effect across button on click */
+  .ax-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ice);
+    opacity: 0;
+    --h: 52px;
+    --o: calc(var(--h) * var(--tan30));
+    clip-path: polygon(0 0, calc(var(--c) * (100% + var(--o))) 0, calc(var(--c) * (100% + var(--o)) - var(--o)) 100%, 0 100%);
+  }
+
+  /* Trigger flash animation when .is-fired class is added */
+  .ax-btn.is-fired::after {
+    animation: ax-fire 640ms var(--e-inout) both;
+  }
+
+  @keyframes ax-fire {
+    0% {
+      --c: 0;
+      opacity: .9;
+    }
+
+    /* Blade sweeps in rapidly */
+    60% {
+      --c: 1;
+      opacity: .9;
+    }
+
+    /* Fully covers button surface */
+    100% {
+      --c: 1;
+      opacity: 0;
+    }
+
+    /* Fades out smoothly */
+  }
+
+  /* ==========================================================================
+   5. TOGGLE SWITCH (Transitions between / and \)
+   ========================================================================== */
+  .ax-toggle {
+    --w: 64px;
+    --h: 34px;
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    padding: 0;
+    border: 1px solid rgba(157, 213, 250, .6);
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: skewX(0);
+  }
+
+  .ax-toggle:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 3px;
+  }
+
+  /* Toggle thumb skewed at -30deg (forward slash /) */
+  .ax-toggle i {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: 14px;
+    background: #fff;
+    transform: skewX(-30deg);
+    transition: left var(--t-state) var(--e-inout), transform var(--t-state) var(--e-inout);
+  }
+
+  /* Checked state (aria-checked="true"): slides right and skews to 30deg (backslash \) */
+  .ax-toggle[aria-checked="true"] {
+    background: var(--electric);
+    border-color: var(--electric);
+  }
+
+  .ax-toggle[aria-checked="true"] i {
+    left: calc(var(--w) - 4px - 14px - 2px);
+    transform: skewX(30deg);
+  }
+
+  /* ==========================================================================
+   6. SEGMENTED TABS (Parallelogram indicator)
+   ========================================================================== */
+  .ax-seg {
+    position: relative;
+    display: inline-flex;
+    border: 1px solid rgba(157, 213, 250, .35);
+  }
+
+  .ax-seg button {
+    position: relative;
+    z-index: 1;
+    min-height: 44px;
+    padding: 0 1.4em;
+    font: 500 .95rem/1 var(--font);
+    color: rgba(255, 255, 255, .7);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--t-state) var(--e-out);
+  }
+
+  .ax-seg button[aria-selected="true"] {
+    color: #fff;
+  }
+
+  .ax-seg button:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: -4px;
+  }
+
+  /* Background pill indicator sliding behind active tab with 60° cut */
+  .ax-seg .ax-ind {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: var(--w, 80px);
+    background: var(--electric);
+    /* Slant calculation: 44px (height) × tan(30°) = 25px */
+    clip-path: polygon(25px 0, 100% 0, calc(100% - 25px) 100%, 0 100%);
+    transform: translateX(var(--x, 0));
+    transition: transform var(--t-move) var(--e-inout), width var(--t-move) var(--e-inout);
+  }
+
+  /* ==========================================================================
+   7. PROGRESS BAR (Angled leading edge)
+   ========================================================================== */
+  .ax-progress {
+    position: relative;
+    height: 10px;
+    background: rgba(157, 213, 250, .18);
+  }
+
+  .ax-progress::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--slash-a), var(--slash-b));
+    clip-path: polygon(0 0, calc(var(--p, 0) * 100% + 6px) 0, calc(var(--p, 0) * 100%) 100%, 0 100%);
+    transition: clip-path 0ms;
+  }
+
+  .ax-progress.is-running::before {
+    animation: ax-prog var(--dur, 2400ms) var(--e-inout) both;
+  }
+
+  @property --p {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 1;
+  }
+
+  @keyframes ax-prog {
+    from {
+      --p: 0;
+    }
+
+    to {
+      --p: 1;
+    }
+  }
+
+  /* ==========================================================================
+   8. SUCCESS CHECKMARK (Two-stroke angled draw)
+   ========================================================================== */
+  .ax-check {
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+  }
+
+  .ax-check path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-dasharray: 1;
+  }
+
+  /* First stroke: downward short leg "\" */
+  .ax-check.is-play path:nth-child(1) {
+    animation: ax-check-a 260ms var(--e-draw) both;
+  }
+
+  /* Second stroke: upward long leg "/" with 220ms delay */
+  .ax-check.is-play path:nth-child(2) {
+    animation: ax-check-a 420ms var(--e-draw) 220ms both;
+  }
+
+  @keyframes ax-check-a {
+    from {
+      stroke-dashoffset: 1;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .ax-check:not(.is-play) path {
+    stroke-dashoffset: 0;
+  }
+
+  /* ==========================================================================
+   9. FULL-SCREEN MENU OVERLAY / SHEET
+   ========================================================================== */
+  .ax-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: var(--navy);
+    color: #fff;
+    visibility: hidden;
+    --h: 100vh;
+    --o: calc(100vh * var(--tan30));
+    clip-path: polygon(0 0, calc(var(--c) * (100% + var(--o))) 0, calc(var(--c) * (100% + var(--o)) - var(--o)) 100%, 0 100%);
+    --c: 0;
+  }
+
+  .ax-sheet.is-open {
+    visibility: visible;
+    animation: ax-cut var(--t-plane) var(--e-inout) both;
+  }
+
+  .ax-sheet.is-closing {
+    visibility: visible;
+    animation: ax-cut-out 640ms var(--e-inout) both;
+  }
+
+  @keyframes ax-cut-out {
+    from {
+      --c: 1;
+    }
+
+    to {
+      --c: 0;
+    }
+  }
+
+  /* Staggered entrance for menu links */
+  .ax-sheet .ax-stagger>* {
+    animation: ax-fade var(--t-move) var(--e-out) calc(380ms + var(--i, 0) * var(--step)) backwards;
+  }
+
+  /* ==========================================================================
+   10. PAGE TRANSITIONS (Two parallel angled planes)
+   HTML structure: <div class="ax-planes"><i class="a"></i><i class="b"></i></div>
+   Script trigger: Axis.go(fn) sweeps planes across screen, executing fn() mid-sweep.
+   ========================================================================== */
+  .ax-planes {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .ax-planes i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -120vh;
+    width: calc(100vw + 240vh);
+    transform: translateX(-80%) skewX(-30deg);
+    transform-origin: 0 100%;
+  }
+
+  .ax-planes .a {
+    background: var(--electric);
+    box-shadow: inset -1px 0 0 var(--ice);
+  }
+
+  /* First electric blue plane */
+  .ax-planes .b {
+    background: var(--navy);
+  }
+
+  /* Second navy trailing plane */
+  .ax-planes.is-go {
+    visibility: visible;
+  }
+
+  .ax-planes.is-go .a {
+    animation: ax-plane-a 1100ms var(--e-inout) both;
+  }
+
+  .ax-planes.is-go .b {
+    animation: ax-plane-b 1100ms var(--e-inout) 90ms both;
+  }
+
+  @keyframes ax-plane-a {
+    from {
+      transform: translateX(-80%) skewX(-30deg);
+    }
+
+    to {
+      transform: translateX(80%) skewX(-30deg);
+    }
+  }
+
+  @keyframes ax-plane-b {
+    from {
+      transform: translateX(-80%) skewX(-30deg);
+    }
+
+    to {
+      transform: translateX(80%) skewX(-30deg);
+    }
+  }
+
+  /* ==========================================================================
+   11. ACCESSIBILITY: REDUCED MOTION
+   When user prefers reduced motion, disable transitions/animations and render
+   final visual state immediately. Page transitions become a simple 160ms fade.
+   ========================================================================== */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    .ax-reveal:not(.is-in) {
+      opacity: 1;
+    }
+
+    .ax-reveal.ax-cut:not(.is-in) {
+      clip-path: none;
+    }
+
+    .ax-field,
+    .ax-cut {
+      clip-path: none !important;
+    }
+
+    .ax-progress::before {
+      clip-path: polygon(0 0, calc(var(--p, 1) * 100% + 6px) 0, calc(var(--p, 1) * 100%) 100%, 0 100%);
+    }
+
+    .ax-planes {
+      display: none;
+    }
+
+    .living-pattern *,
+    .ax-ghost {
+      animation: none !important;
+    }
+
+    body.ax-fading {
+      opacity: 0;
+      transition: opacity 160ms linear !important;
+    }
+  }
+
+  footer.site {
+    padding: 56px 0;
+    border-top: 1px solid rgba(157, 213, 250, .2);
+    color: rgba(255, 255, 255, .6)
+  }
+
+  footer.site .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px
+  }
+
+  footer.site img {
+    height: 36px
+  }

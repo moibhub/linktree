@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moibhub/Linktree</title>
+    <meta name="theme-color" content="#00041c">
+
+    <!-- Brand Font: Commissioner -->
+    <link rel="icon" type="image/svg+xml" href="brand/mark-white.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Design tokens, layout, and motion stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="ax-stage hero" id="hero">
+        <!-- Background gradient field with cut entrance transition -->
+        <div class="ax-field"></div>
+
+        <!-- Ambient pattern background: mesh, aura, and 60-degree axis lines -->
+        <div class="ax-pattern living-pattern" aria-hidden="true">
+            <div class="pattern-mesh"></div>
+            <div class="pattern-aura"></div>
+            <div class="pattern-lines">
+                <span class="pline l1"></span>
+                <span class="pline l2"></span>
+                <span class="pline l3"></span>
+                <span class="pline l4"></span>
+            </div>
+            <!-- Secondary ambient circuit track -->
+            <svg class="ax-ghost ghost-c" viewBox="0 0 151 173" aria-hidden="true">
+                <path class="track" pathLength="1"
+                    d="M150.114 0.5L124.737 44.46L77.0068 127.13L51.3418 171.59H0.865234L26.2432 127.63L99.6484 0.5H150.114Z" />
+                <path class="tracer" pathLength="1"
+                    d="M150.114 0.5L124.737 44.46L77.0068 127.13L51.3418 171.59H0.865234L26.2432 127.63L99.6484 0.5H150.114Z" />
+            </svg>
+        </div>
+
+        <!-- Circuit tracks and animated light tracers (Track & Tracer) -->
+        <!-- Part 1: 60-degree forward slash (/) -->
+        <svg class="ax-ghost ghost-a" viewBox="0 0 151 173" aria-hidden="true">
+            <!-- Fixed base track -->
+            <path class="track" pathLength="1"
+                d="M150.114 0.5L124.737 44.46L77.0068 127.13L51.3418 171.59H0.865234L26.2432 127.63L99.6484 0.5H150.114Z" />
+            <!-- Animated tracer following track -->
+            <path class="tracer" pathLength="1"
+                d="M150.114 0.5L124.737 44.46L77.0068 127.13L51.3418 171.59H0.865234L26.2432 127.63L99.6484 0.5H150.114Z" />
+        </svg>
+
+        <!-- Part 2: glyph (a) -->
+        <svg class="ax-ghost ghost-b" viewBox="0 0 251 173" aria-hidden="true">
+            <!-- Fixed base track -->
+            <path class="track" pathLength="1"
+                d="M250.34 172.09H147.07L121.26 127.38H172.9L125.17 44.71L51.63 172.09H0L99.36 0H150.99L250.34 172.09Z" />
+            <!-- Animated tracer following track -->
+            <path class="tracer" pathLength="1"
+                d="M250.34 172.09H147.07L121.26 127.38H172.9L125.17 44.71L51.63 172.09H0L99.36 0H150.99L250.34 172.09Z" />
+        </svg>
+
+        <!-- Top navigation header container -->
+        <header>
+        </header>
+
+        <!-- Main hero body -->
+        <div class="hero-body">
+            <div>
+                <!-- Role label with cut entrance animation -->
+                <div class="role ax-mono ax-cut" style="--h:.72rem;--delay:1000ms">Modther Abdalhag / Software Developer
+                </div>
+
+                <!-- Main headline with staggered cut entrance transitions -->
+                <h1>
+                    <span class="ax-line ax-cut" style="--h:1.1em;--delay:1050ms;--i:0">Everything I build</span>
+                    <span class="ax-line ax-cut" style="--h:1.1em;--delay:1050ms;--i:1">leans forward.</span>
+                </h1>
+
+                <!-- Brief positioning statement -->
+                <p class="sub ax-cut" style="--h:4.2em;--delay:1300ms">
+                    The angle in my logo is the angle I'm climbing at: a software developer aiming at the engineering
+                    teams whose code the world runs on.
+                </p>
+
+                <!-- Navigation link buttons with interactive fold effect -->
+                <div class="cta links-stack">
+                    <a class="ax-btn is-ghost ax-cut" style="--h:52px;--delay:1400ms" href="https://github.com/moibhub"
+                        target="_blank" rel="noopener">
+                        <span class="btn-left">
+                            <span class="ax-slash"></span>
+                            <span>GitHub / Read the code, not the pitch</span>
+                        </span>
+                        <span class="btn-state ax-mono">/</span>
+                    </a>
+
+                    <a class="ax-btn is-ghost ax-cut" style="--h:52px;--delay:1490ms" href="#portfolio">
+                        <span class="btn-left">
+                            <span class="ax-slash"></span>
+                            <span>Portfolio / Systems, not screenshots</span>
+                        </span>
+                        <span class="btn-state ax-mono">/</span>
+                    </a>
+
+                    <a class="ax-btn is-ghost ax-cut" style="--h:52px;--delay:1580ms" href="#experience">
+                        <span class="btn-left">
+                            <span class="ax-slash"></span>
+                            <span>Resume / One page. No filler</span>
+                        </span>
+                        <span class="btn-state ax-mono">/</span>
+                    </a>
+
+                    <a class="ax-btn is-ghost ax-cut" style="--h:52px;--delay:1670ms"
+                        href="mailto:modtherabdalhag@gmail.com">
+                        <span class="btn-left">
+                            <span class="ax-slash"></span>
+                            <span>Contact / Bring me the hard problem</span>
+                        </span>
+                        <span class="btn-state ax-mono">/</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 
+              Hero mark motion sequence:
+              1. Trace: outlines drawn and faded (ax-trace)
+              2. Ride: slash translates along 60-degree axis (ax-ride)
+              3. Cut: letter 'a' revealed with angled blade (ax-cut)
+            -->
+            <div class="hero-mark" aria-hidden="true">
+                <svg class="l-trace" viewBox="0 0 353.58 172.09">
+                    <path class="ax-trace" pathLength="1" style="--delay:350ms"
+                        d="M150.114 0.5L124.737 44.46L77.0068 127.13L51.3418 171.59H0.865234L26.2432 127.63L99.6484 0.5H150.114Z" />
+                    <path class="ax-trace" pathLength="1" style="--delay:450ms" transform="translate(103.24 0)"
+                        d="M250.34 172.09H147.07L121.26 127.38H172.9L125.17 44.71L51.63 172.09H0L99.36 0H150.99L250.34 172.09Z" />
+                </svg>
+                <svg class="l-slash ax-ride" style="--delay:1000ms" viewBox="0 0 353.58 172.09">
+                    <polygon fill="#f5f5f5" points="150.98 0 51.63 172.09 0 172.09 99.36 0" />
+                </svg>
+                <svg class="l-a ax-cut" style="--delay:1100ms;--dur:760ms" viewBox="0 0 353.58 172.09">
+                    <path fill="#f5f5f5"
+                        d="M353.58 172.09H250.31L224.5 127.38H276.14L228.41 44.71L154.87 172.09H103.24L202.6 0H254.23Z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Hero footer: brand lockup and replay intro trigger -->
+        <div class="hero-foot ax-mono ax-cut" style="--h:20px;--delay:1780ms">
+            <div class="hero-foot-div">
+                <img src="brand/lockup-white.svg" alt="Modther Abdalhag">
+                <button id="replayHero" type="button">Replay intro <span class="ax-slash"></span></button>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
